@@ -28,7 +28,6 @@ public class CnpjApiClient {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         return response.body();
-
     }
 	
 	

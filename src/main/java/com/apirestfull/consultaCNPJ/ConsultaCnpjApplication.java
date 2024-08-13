@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
+import com.apirestfull.consultaCNPJ.Response.CnpjResponse;
 import com.apirestfull.consultaCNPJ.Service.CnpjApiClient;
 import com.apirestfull.consultaCNPJ.Service.CnpjServiceImpl;
 
@@ -24,10 +25,25 @@ public class ConsultaCnpjApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		/*
 		CnpjApiClient cnpjApiClient = new CnpjApiClient();
-		
 		CnpjServiceImpl CnpjServiceImpl = new CnpjServiceImpl(cnpjApiClient);
-		CnpjServiceImpl.getCnpj("09534493000114");
+		System.out.println(CnpjServiceImpl.getCnpj("09534493000114"));
+		 */
+
+		
+		CnpjApiClient apiClient = new CnpjApiClient();
+	    CnpjServiceImpl service = new CnpjServiceImpl(apiClient);
+	    
+	    try {
+	        String jsonResponse = apiClient.fetchCnpj("09534493000114");
+	        System.out.println("JSON Response: " + jsonResponse);
+	        
+	        CnpjResponse response = service.getCnpj("09534493000114");
+	        System.out.println("Parsed Response: " + response);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 
 }

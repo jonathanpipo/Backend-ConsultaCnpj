@@ -25,12 +25,13 @@ public class CnpjServiceImpl implements CnpjService {
     @Override
     public CnpjResponse getCnpj(String CNPJ) throws Exception {
         String jsonResponse = cnpjApiClient.fetchCnpj(CNPJ);
+        
+        //teste do JSON antes de deserializar
+        System.out.println(jsonResponse);
         return parseJsonToCnpjResponse(jsonResponse);    	
     }
 
-
 	private CnpjResponse parseJsonToCnpjResponse(String jsonResponse) {
-
 		return gson.fromJson(jsonResponse, CnpjResponse.class);
 	}
 }

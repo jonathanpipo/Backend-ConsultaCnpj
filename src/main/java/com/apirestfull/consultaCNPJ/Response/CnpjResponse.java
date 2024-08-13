@@ -7,28 +7,28 @@ public class CnpjResponse {
     private String razaoSocial;
     private String nomeFantasia;
     private String capitalSocial;
-    private LocalDateTime atualizadoEm;
-    private String porte;
     private String naturezaJuridica;
     private String atividadePrincipal;
     private String telefone;
     private String email;
     
-    
 
     public CnpjResponse() {
 	}
     
-	public CnpjResponse(String cnpjRaiz, String razaoSocial, String nomeFantasia, String capitalSocial,
-			LocalDateTime atualizadoEm, String porte, String naturezaJuridica, String atividadePrincipal,
-			String telefone, String email) {
+	public CnpjResponse(String cnpjRaiz, 
+			String razaoSocial, 
+			String nomeFantasia, 
+			String capitalSocial, 
+			String naturezaJuridica, 
+			String atividadePrincipal,
+			String telefone, 
+			String email) {
 		super();
 		this.cnpjRaiz = cnpjRaiz;
 		this.razaoSocial = razaoSocial;
 		this.nomeFantasia = nomeFantasia;
 		this.capitalSocial = capitalSocial;
-		this.atualizadoEm = atualizadoEm;
-		this.porte = porte;
 		this.naturezaJuridica = naturezaJuridica;
 		this.atividadePrincipal = atividadePrincipal;
 		this.telefone = telefone;
@@ -47,12 +47,6 @@ public class CnpjResponse {
     public String getCapitalSocial() { return capitalSocial; }
     public void setCapitalSocial(String capitalSocial) { this.capitalSocial = capitalSocial; }
 
-    public LocalDateTime getAtualizadoEm() { return atualizadoEm; }
-    public void setAtualizadoEm(LocalDateTime atualizadoEm) { this.atualizadoEm = atualizadoEm; }
-
-    public String getPorte() { return porte; }
-    public void setPorte(String porte) { this.porte = porte; }
-
     public String getNaturezaJuridica() { return naturezaJuridica; }
     public void setNaturezaJuridica(String naturezaJuridica) { this.naturezaJuridica = naturezaJuridica; }
 
@@ -64,7 +58,14 @@ public class CnpjResponse {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-    
+
+	@Override
+	public String toString() {
+		return "CnpjResponse [cnpjRaiz=" + cnpjRaiz + ", razaoSocial=" + razaoSocial + ", nomeFantasia=" + nomeFantasia
+				+ ", capitalSocial=" + capitalSocial + ", naturezaJuridica=" + naturezaJuridica
+				+ ", atividadePrincipal=" + atividadePrincipal + ", telefone=" + telefone + ", email=" + email + "]";
+	}
+ 
     
 }
 
