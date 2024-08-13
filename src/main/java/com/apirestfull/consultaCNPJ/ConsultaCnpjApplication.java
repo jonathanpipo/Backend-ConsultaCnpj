@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
+import com.apirestfull.consultaCNPJ.Service.CnpjApiClient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,29 +22,8 @@ public class ConsultaCnpjApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Digite um CNPJ:");
-		
-		String busca = scanner.nextLine();
-		
-		String url = "https://publica.cnpj.ws/cnpj/";
-		
-		String endereco = url + busca;
-		
-		HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(endereco))
-                .build();
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-
-        String json = response.body();
-        System.out.println(json);
-		
-        
+		CnpjApiClient cnpjApiClient = new CnpjApiClient();
+		cnpjApiClient.getCnpj("09534493000114");
 	}
 
 }
