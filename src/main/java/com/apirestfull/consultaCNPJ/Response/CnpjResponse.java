@@ -13,8 +13,28 @@ public class CnpjResponse {
     private String atividadePrincipal;
     private String telefone;
     private String email;
+    
+    
 
-    // Getters e Setters
+    public CnpjResponse() {
+	}
+    
+	public CnpjResponse(String cnpjRaiz, String razaoSocial, String nomeFantasia, String capitalSocial,
+			LocalDateTime atualizadoEm, String porte, String naturezaJuridica, String atividadePrincipal,
+			String telefone, String email) {
+		super();
+		this.cnpjRaiz = cnpjRaiz;
+		this.razaoSocial = razaoSocial;
+		this.nomeFantasia = nomeFantasia;
+		this.capitalSocial = capitalSocial;
+		this.atualizadoEm = atualizadoEm;
+		this.porte = porte;
+		this.naturezaJuridica = naturezaJuridica;
+		this.atividadePrincipal = atividadePrincipal;
+		this.telefone = telefone;
+		this.email = email;
+	}
+	// Getters e Setters
     public String getCnpjRaiz() { return cnpjRaiz; }
     public void setCnpjRaiz(String cnpjRaiz) { this.cnpjRaiz = cnpjRaiz; }
 
@@ -44,5 +64,7 @@ public class CnpjResponse {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+    
+    
 }
 

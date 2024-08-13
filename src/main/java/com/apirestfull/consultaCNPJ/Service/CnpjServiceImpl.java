@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.apirestfull.consultaCNPJ.Response.CnpjResponse;
+import com.google.gson.Gson;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -14,6 +15,7 @@ import java.net.http.HttpResponse;
 public class CnpjServiceImpl implements CnpjService {
 	
 	private final CnpjApiClient cnpjApiClient;
+	private final Gson gson = new Gson();
 	
 	@Autowired
 	public CnpjServiceImpl(CnpjApiClient cnpjApiClient) {
@@ -28,14 +30,7 @@ public class CnpjServiceImpl implements CnpjService {
 
 
 	private CnpjResponse parseJsonToCnpjResponse(String jsonResponse) {
-		//Utilizar GSON para serializar o JSON
-		// return gson.fromJson(json, CnpjResponse.class);
-		
-		CnpjResponse cnpjResponse = new CnpjResponse();
-		// Preencher o objeto com dados extraídos do JSON
-		// cnpjResponse.setCnpj(...);
-		// cnpjResponse.setNome(...);
 
-		return null;
+		return gson.fromJson(jsonResponse, CnpjResponse.class);
 	}
 }
