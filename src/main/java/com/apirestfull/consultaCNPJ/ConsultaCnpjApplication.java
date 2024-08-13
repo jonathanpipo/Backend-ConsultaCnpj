@@ -6,6 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
 
+import com.apirestfull.consultaCNPJ.Service.CnpjApiClient;
 import com.apirestfull.consultaCNPJ.Service.CnpjServiceImpl;
 
 import org.springframework.boot.CommandLineRunner;
@@ -23,7 +24,9 @@ public class ConsultaCnpjApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		CnpjServiceImpl CnpjServiceImpl = new CnpjServiceImpl();
+		CnpjApiClient cnpjApiClient = new CnpjApiClient();
+		
+		CnpjServiceImpl CnpjServiceImpl = new CnpjServiceImpl(cnpjApiClient);
 		CnpjServiceImpl.getCnpj("09534493000114");
 	}
 
