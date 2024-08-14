@@ -1,9 +1,9 @@
 package com.apirestfull.consultaCNPJ.Service;
 
-import com.apirestfull.consultaCNPJ.Model.CnpjResponse;
+import com.apirestfull.consultaCNPJ.Response.CnpjResponseDTO;
 
 public interface CnpjService {
 
-	public CnpjResponse getCnpj (String CNPJ) throws Exception;
+	public CnpjResponseDTO getCnpj (String CNPJ) throws Exception;
 
 }

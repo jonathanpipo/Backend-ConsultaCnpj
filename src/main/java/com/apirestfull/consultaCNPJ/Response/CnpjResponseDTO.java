@@ -1,33 +1,36 @@
-package com.apirestfull.consultaCNPJ.Model;
+package com.apirestfull.consultaCNPJ.Response;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.List;
 
 
-public class CnpjResponse {
-    @SerializedName("cnpj_raiz")
+@JsonPropertyOrder({ "cnpjRaiz", "razaoSocial", "capitalSocial", "porte", "naturezaJuridica", "socios", "simples", "estabelecimento" })
+public class CnpjResponseDTO {
+
+    @JsonProperty("cnpj_raiz")
     private String cnpjRaiz;
 
-    @SerializedName("razao_social")
+    @JsonProperty("razao_social")
     private String razaoSocial;
 
-    @SerializedName("capital_social")
+    @JsonProperty("capital_social")
     private String capitalSocial;
 
-    @SerializedName("porte")
+    @JsonProperty("porte")
     private Porte porte;
 
-    @SerializedName("natureza_juridica")
+    @JsonProperty("natureza_juridica")
     private NaturezaJuridica naturezaJuridica;
 
-    @SerializedName("socios")
+    @JsonProperty("socios")
     private List<Socio> socios;
 
-    @SerializedName("simples")
+    @JsonProperty("simples")
     private Simples simples;
 
-    @SerializedName("estabelecimento")
+    @JsonProperty("estabelecimento")
     private Estabelecimento estabelecimento;
 
     // Getters e Setters...
@@ -114,10 +117,10 @@ public class CnpjResponse {
 // Classes adicionais
 
 class Porte {
-    @SerializedName("id")
+    @JsonProperty("id")
     private String id;
 
-    @SerializedName("descricao")
+    @JsonProperty("descricao")
     private String descricao;
 
     // Getters e Setters
@@ -148,10 +151,10 @@ class Porte {
 }
 
 class NaturezaJuridica {
-    @SerializedName("id")
+    @JsonProperty("id")
     private String id;
 
-    @SerializedName("descricao")
+    @JsonProperty("descricao")
     private String descricao;
 
     // Getters e Setters
@@ -182,22 +185,22 @@ class NaturezaJuridica {
 }
 
 class Socio {
-    @SerializedName("cpf_cnpj_socio")
+    @JsonProperty("cpf_cnpj_socio")
     private String cpfCnpjSocio;
 
-    @SerializedName("nome")
+    @JsonProperty("nome")
     private String nome;
 
-    @SerializedName("tipo")
+    @JsonProperty("tipo")
     private String tipo;
 
-    @SerializedName("data_entrada")
+    @JsonProperty("data_entrada")
     private String dataEntrada;
 
-    @SerializedName("pais")
+    @JsonProperty("pais")
     private Pais pais;
 
-    @SerializedName("qualificacao_socio")
+    @JsonProperty("qualificacao_socio")
     private Qualificacao qualificacaoSocio;
 
     // Getters e Setters
@@ -264,22 +267,22 @@ class Socio {
 }
 
 class Simples {
-    @SerializedName("simples")
+    @JsonProperty("simples")
     private String simples;
 
-    @SerializedName("data_opcao_simples")
+    @JsonProperty("data_opcao_simples")
     private String dataOpcaoSimples;
 
-    @SerializedName("data_exclusao_simples")
+    @JsonProperty("data_exclusao_simples")
     private String dataExclusaoSimples;
 
-    @SerializedName("mei")
+    @JsonProperty("mei")
     private String mei;
 
-    @SerializedName("data_opcao_mei")
+    @JsonProperty("data_opcao_mei")
     private String dataOpcaoMei;
 
-    @SerializedName("data_exclusao_mei")
+    @JsonProperty("data_exclusao_mei")
     private String dataExclusaoMei;
 
 
@@ -347,46 +350,46 @@ class Simples {
 }
 
 class Estabelecimento {
-    @SerializedName("cnpj")
+    @JsonProperty("cnpj")
     private String cnpj;
 
-    @SerializedName("tipo")
+    @JsonProperty("tipo")
     private String tipo;
 
-    @SerializedName("nome_fantasia")
+    @JsonProperty("nome_fantasia")
     private String nomeFantasia;
 
-    @SerializedName("situacao_cadastral")
+    @JsonProperty("situacao_cadastral")
     private String situacaoCadastral;
 
-    @SerializedName("data_situacao_cadastral")
+    @JsonProperty("data_situacao_cadastral")
     private String dataSituacaoCadastral;
 
-    @SerializedName("data_inicio_atividade")
+    @JsonProperty("data_inicio_atividade")
     private String dataInicioAtividade;
 
-    @SerializedName("logradouro")
+    @JsonProperty("logradouro")
     private String logradouro;
 
-    @SerializedName("numero")
+    @JsonProperty("numero")
     private String numero;
 
-    @SerializedName("complemento")
+    @JsonProperty("complemento")
     private String complemento;
 
-    @SerializedName("bairro")
+    @JsonProperty("bairro")
     private String bairro;
 
-    @SerializedName("cep")
+    @JsonProperty("cep")
     private String cep;
 
-    @SerializedName("telefone_1")
+    @JsonProperty("telefone_1")
     private String telefone1;
 
-    @SerializedName("email")
+    @JsonProperty("email")
     private String email;
 
-    @SerializedName("atividade_principal")
+    @JsonProperty("atividade_principal")
     private AtividadePrincipal atividadePrincipal;
 
     // Getters e Setters
@@ -525,10 +528,10 @@ class Estabelecimento {
 }
 
 class AtividadePrincipal {
-    @SerializedName("id")
+    @JsonProperty("id")
     private String id;
 
-    @SerializedName("descricao")
+    @JsonProperty("descricao")
     private String descricao;
 
     // Getters e Setters
@@ -559,10 +562,10 @@ class AtividadePrincipal {
 }
 
 class Pais {
-    @SerializedName("id")
+    @JsonProperty("id")
     private String id;
 
-    @SerializedName("nome")
+    @JsonProperty("nome")
     private String nome;
 
     // Getters e Setters
@@ -593,10 +596,10 @@ class Pais {
 }
 
 class Qualificacao {
-    @SerializedName("id")
+    @JsonProperty("id")
     private String id;
 
-    @SerializedName("descricao")
+    @JsonProperty("descricao")
     private String descricao;
 
     // Getters e Setters
