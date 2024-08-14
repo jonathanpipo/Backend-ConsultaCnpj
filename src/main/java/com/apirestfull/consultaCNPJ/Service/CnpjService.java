@@ -1,6 +1,6 @@
 package com.apirestfull.consultaCNPJ.Service;
 
-import com.apirestfull.consultaCNPJ.Response.CnpjResponse;
+import com.apirestfull.consultaCNPJ.Model.CnpjResponse;
 
 public interface CnpjService {
 

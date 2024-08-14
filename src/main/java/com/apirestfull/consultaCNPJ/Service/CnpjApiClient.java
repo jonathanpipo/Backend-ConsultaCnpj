@@ -29,7 +29,4 @@ public class CnpjApiClient {
 
         return response.body();
     }
-	
-	
-
 }

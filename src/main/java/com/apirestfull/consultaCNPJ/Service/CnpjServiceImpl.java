@@ -3,13 +3,8 @@ package com.apirestfull.consultaCNPJ.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.apirestfull.consultaCNPJ.Response.CnpjResponse;
+import com.apirestfull.consultaCNPJ.Model.CnpjResponse;
 import com.google.gson.Gson;
-
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 
 @Service
 public class CnpjServiceImpl implements CnpjService {
@@ -25,9 +20,6 @@ public class CnpjServiceImpl implements CnpjService {
     @Override
     public CnpjResponse getCnpj(String CNPJ) throws Exception {
         String jsonResponse = cnpjApiClient.fetchCnpj(CNPJ);
-        
-        //teste do JSON antes de deserializar
-        System.out.println(jsonResponse);
         return parseJsonToCnpjResponse(jsonResponse);    	
     }
 
