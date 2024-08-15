@@ -1,6 +1,5 @@
 package com.apirestfull.consultaCNPJ.model;
 
-import java.util.ArrayList;
 
 public class Root {
     public String cnpj_raiz;
