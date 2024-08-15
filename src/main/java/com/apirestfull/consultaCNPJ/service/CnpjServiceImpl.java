@@ -1,10 +1,12 @@
-package com.apirestfull.consultaCNPJ.Service;
+package com.apirestfull.consultaCNPJ.service;
 
-import com.apirestfull.consultaCNPJ.Response.CnpjResponseDTO;
+import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
+//import com.apirestfull.consultaCNPJ.response.CnpjResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
+
 
 @Service
 public class CnpjServiceImpl implements CnpjService {
@@ -18,12 +20,12 @@ public class CnpjServiceImpl implements CnpjService {
 	}
 
     @Override
-    public CnpjResponseDTO getCnpj(String CNPJ) throws Exception {
+    public CnpjDTO fetchCnpj(String CNPJ) throws Exception {
         String jsonResponse = cnpjApiClient.fetchCnpj(CNPJ);
-        return parseJsonToCnpjResponse(jsonResponse);    	
+        return parseJsonToCnpjResponse(jsonResponse);
     }
 
-	private CnpjResponseDTO parseJsonToCnpjResponse(String jsonResponse) {
-		return gson.fromJson(jsonResponse, CnpjResponseDTO.class);
+	private CnpjDTO parseJsonToCnpjResponse(String jsonResponse) {
+		return gson.fromJson(jsonResponse, CnpjDTO.class);
 	}
 }

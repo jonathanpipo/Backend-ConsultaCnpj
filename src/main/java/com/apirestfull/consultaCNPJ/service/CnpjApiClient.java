@@ -1,15 +1,19 @@
-package com.apirestfull.consultaCNPJ.Service;
+package com.apirestfull.consultaCNPJ.service;
 
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
 @Component
 public class CnpjApiClient {
+
+    @Value("${api.cnpj.url}")
+    private String apiCnpjUrl;
 	
 	private final HttpClient httpClient;
 
@@ -19,7 +23,7 @@ public class CnpjApiClient {
 	
     public String fetchCnpj(String CNPJ) throws Exception {
     	
-        String URLAPI = "https://publica.cnpj.ws/cnpj/" + CNPJ ;
+        String URLAPI = apiCnpjUrl + CNPJ ;
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(URLAPI))

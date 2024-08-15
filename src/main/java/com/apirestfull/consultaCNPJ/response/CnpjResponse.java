@@ -1,13 +1,14 @@
-package com.apirestfull.consultaCNPJ.Response;
+package com.apirestfull.consultaCNPJ.response;
+//TODO If you can't refactor, delete
+/*
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.util.List;
 
-
 @JsonPropertyOrder({ "cnpjRaiz", "razaoSocial", "capitalSocial", "porte", "naturezaJuridica", "socios", "simples", "estabelecimento" })
-public class CnpjResponseDTO {
+public class CnpjResponse {
 
     @JsonProperty("cnpj_raiz")
     private String cnpjRaiz;
@@ -628,4 +629,4 @@ class Qualificacao {
                 '}';
     }
 }
-
+*/

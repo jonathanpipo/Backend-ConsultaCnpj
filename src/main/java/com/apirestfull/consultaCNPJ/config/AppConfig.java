@@ -1,4 +1,4 @@
-package com.apirestfull.consultaCNPJ.Config;
+package com.apirestfull.consultaCNPJ.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

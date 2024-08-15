@@ -1,32 +1,17 @@
 package com.apirestfull.consultaCNPJ;
 
-import com.apirestfull.consultaCNPJ.Response.CnpjResponseDTO;
-import com.apirestfull.consultaCNPJ.Service.CnpjApiClient;
-import com.apirestfull.consultaCNPJ.Service.CnpjServiceImpl;
+//import com.apirestfull.consultaCNPJ.response.CnpjResponse;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ConsultaCnpjApplication implements CommandLineRunner {
+public class ConsultaCnpjApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ConsultaCnpjApplication.class, args);
-	}
+			}
 
-	@Override
-	public void run(String... args) throws Exception {
 
-		CnpjApiClient apiClient = new CnpjApiClient();
-	    CnpjServiceImpl service = new CnpjServiceImpl(apiClient);
-	    
-	    try {
-			CnpjResponseDTO response = service.getCnpj("09534493000114");
-	        System.out.println("Parsed Response: " + response);
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	    }
-	}
 
 }
