@@ -1,31 +1,33 @@
 package com.apirestfull.consultaCNPJ.service;
 
-import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
-//import com.apirestfull.consultaCNPJ.response.CnpjResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import com.google.gson.Gson;
+import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 
 @Service
-public class CnpjServiceImpl implements CnpjService {
-	
-	private final CnpjApiClient cnpjApiClient;
-	private final Gson gson = new Gson();
-	
-	@Autowired
-	public CnpjServiceImpl(CnpjApiClient cnpjApiClient) {
-		this.cnpjApiClient = cnpjApiClient;
-	}
+public class CnpjServiceImpl implements CnpjService{
 
-    @Override
-    public CnpjDTO fetchCnpj(String CNPJ) throws Exception {
-        String jsonResponse = cnpjApiClient.fetchCnpj(CNPJ);
-        return parseJsonToCnpjResponse(jsonResponse);
+    @Value("${api.cnpj.url}")
+    private String apiCnpjUrl;
+	
+	private final RestTemplate restTemplate;
+
+	public CnpjServiceImpl(RestTemplate restTemplate) {
+		this.restTemplate = restTemplate;
+	}
+	
+    public CnpjDTO fetchCnpj(String cnpj) throws Exception {
+    	
+    	//URLAPI configurado em application.properties
+    	String URLAPI = apiCnpjUrl + cnpj ;
+    	
+    	ResponseEntity<CnpjDTO> response = restTemplate.getForEntity(URLAPI, CnpjDTO.class);
+    	
+    	return response.getBody();
     }
-
-	private CnpjDTO parseJsonToCnpjResponse(String jsonResponse) {
-		return gson.fromJson(jsonResponse, CnpjDTO.class);
-	}
 }
