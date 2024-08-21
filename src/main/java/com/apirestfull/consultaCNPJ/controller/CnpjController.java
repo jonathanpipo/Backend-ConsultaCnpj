@@ -1,7 +1,10 @@
 package com.apirestfull.consultaCNPJ.controller;
 
 import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
-import com.apirestfull.consultaCNPJ.service.CnpjServiceImpl;
+import com.apirestfull.consultaCNPJ.service.CnpjService;
+
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -19,21 +22,15 @@ public class CnpjController {
     private String apiCnpjUrl;
 
     @Autowired
-    private CnpjServiceImpl cnpjServiceImpl;
+    private CnpjService cnpjService;
 
     @GetMapping("/{cnpj}")
     public ResponseEntity<CnpjDTO> getCnpj(@PathVariable String cnpj) throws Exception {
     	
-    	CnpjDTO cnpjDTO = cnpjServiceImpl.fetchCnpj(cnpj);
+    	Optional<CnpjDTO> cnpjDTO = cnpjService.fetchCnpj(cnpj);
     	
-        if (cnpjDTO != null) {
-        	
-            return ResponseEntity.ok(cnpjDTO);
-            
-        } else {
-        	
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        return cnpjDTO.map(ResponseEntity::ok)
+        		.orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
 }

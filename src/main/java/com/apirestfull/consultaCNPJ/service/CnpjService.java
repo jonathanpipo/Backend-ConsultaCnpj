@@ -1,9 +1,11 @@
 package com.apirestfull.consultaCNPJ.service;
 
+import java.util.Optional;
+
 import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
 
 public interface CnpjService {
 
-	CnpjDTO fetchCnpj(String CNPJ) throws Exception;
+	Optional<CnpjDTO> fetchCnpj(String CNPJ) throws Exception;
 
 }

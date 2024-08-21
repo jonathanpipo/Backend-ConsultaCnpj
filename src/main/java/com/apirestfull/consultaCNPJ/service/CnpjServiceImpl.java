@@ -4,8 +4,9 @@ import org.springframework.web.client.RestTemplate;
 
 import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
@@ -21,13 +22,13 @@ public class CnpjServiceImpl implements CnpjService{
 		this.restTemplate = restTemplate;
 	}
 	
-    public CnpjDTO fetchCnpj(String cnpj) throws Exception {
+    @Override
+    public Optional<CnpjDTO> fetchCnpj(String CNPJ) throws Exception {
+        
+    	String URLAPI = apiCnpjUrl + CNPJ;
     	
-    	//URLAPI configurado em application.properties
-    	String URLAPI = apiCnpjUrl + cnpj ;
+    	CnpjDTO cnpjDTO = restTemplate.getForObject(URLAPI, CnpjDTO.class);
     	
-    	ResponseEntity<CnpjDTO> response = restTemplate.getForEntity(URLAPI, CnpjDTO.class);
-    	
-    	return response.getBody();
+        return Optional.ofNullable(cnpjDTO);
     }
 }
