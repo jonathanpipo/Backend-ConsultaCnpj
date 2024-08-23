@@ -1,4 +1,4 @@
-package com.apirestfull.consultaCNPJ.model;
+package com.apirestful.consultaCNPJ.model;
 
 /*
 public class Socio {

@@ -1,4 +1,4 @@
-package com.apirestfull.consultaCNPJ.config;
+package com.apirestful.consultaCNPJ.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

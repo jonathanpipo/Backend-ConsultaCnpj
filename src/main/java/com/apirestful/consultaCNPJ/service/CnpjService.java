@@ -1,8 +1,8 @@
-package com.apirestfull.consultaCNPJ.service;
+package com.apirestful.consultaCNPJ.service;
 
 import java.util.Optional;
 
-import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
+import com.apirestful.consultaCNPJ.dto.CnpjDTO;
 
 public interface CnpjService {
 

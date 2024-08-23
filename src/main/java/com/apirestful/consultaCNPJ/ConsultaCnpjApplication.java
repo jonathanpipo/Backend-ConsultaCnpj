@@ -1,4 +1,4 @@
-package com.apirestfull.consultaCNPJ;
+package com.apirestful.consultaCNPJ;
 
 //import com.apirestfull.consultaCNPJ.response.CnpjResponse;
 

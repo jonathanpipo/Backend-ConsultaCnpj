@@ -1,7 +1,7 @@
-package com.apirestfull.consultaCNPJ.controller;
+package com.apirestful.consultaCNPJ.controller;
 
-import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
-import com.apirestfull.consultaCNPJ.service.CnpjService;
+import com.apirestful.consultaCNPJ.dto.CnpjDTO;
+import com.apirestful.consultaCNPJ.service.CnpjService;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

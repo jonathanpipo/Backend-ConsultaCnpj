@@ -1,8 +1,8 @@
-package com.apirestfull.consultaCNPJ.service;
+package com.apirestful.consultaCNPJ.service;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.apirestfull.consultaCNPJ.dto.CnpjDTO;
+import com.apirestful.consultaCNPJ.dto.CnpjDTO;
 
 import java.util.Optional;
 
