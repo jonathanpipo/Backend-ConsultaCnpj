@@ -1,5 +1,5 @@
 package com.apirestfull.consultaCNPJ.model;
-
+/*
 public class Simples {
     public String simples;
     public String data_opcao_simples;
@@ -8,3 +8,4 @@ public class Simples {
     public Object data_opcao_mei;
     public Object data_exclusao_mei;
 }
+*/

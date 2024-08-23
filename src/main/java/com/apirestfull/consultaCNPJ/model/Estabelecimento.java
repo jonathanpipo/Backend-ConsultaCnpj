@@ -1,5 +1,5 @@
 package com.apirestfull.consultaCNPJ.model;
-
+/*
 public class Estabelecimento {
     public String cnpj;
     public String tipo;
@@ -14,5 +14,6 @@ public class Estabelecimento {
     public String cep;
     public Object telefone_1;
     public String email;
-    public AtividadePrincipal atividade_principal;
+    //ublic AtividadePrincipal atividade_principal;
 }
+*/

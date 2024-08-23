@@ -1,5 +1,6 @@
 package com.apirestfull.consultaCNPJ.model;
 
+/*
 public class Socio {
     public String simples;
     public String data_opcao_simples;
@@ -8,3 +9,4 @@ public class Socio {
     public Object data_opcao_mei;
     public Object data_exclusao_mei;
 }
+*/

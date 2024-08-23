@@ -1,16 +1,9 @@
 package com.apirestfull.consultaCNPJ.dto;
 
-import com.apirestfull.consultaCNPJ.model.*;
-
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 //TODO Fix: Null returns in json
-public record CnpjDTO( String cnpj_raiz,
-                       String razao_social,
-                       String capital_social,
-                       Porte porte,
-                       NaturezaJuridica natureza_juridica,
-                       ArrayList<Socio> socios,
-                       Simples simples,
-                       Estabelecimento estabelecimento) {
+public record CnpjDTO(@JsonProperty("cnpj_raiz") String cnpjRaiz,
+                      @JsonProperty("razao_social")String razaoSocial,
+                      @JsonProperty("capital_social")String capitalSocial) {
 }
