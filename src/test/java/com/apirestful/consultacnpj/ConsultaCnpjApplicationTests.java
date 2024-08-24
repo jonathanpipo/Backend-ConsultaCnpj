@@ -1,4 +1,4 @@
-package com.apirestful.consultaCNPJ;
+package com.apirestful.consultacnpj;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.apirestful.consultaCNPJ.dto;
+package com.apirestful.consultacnpj.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
