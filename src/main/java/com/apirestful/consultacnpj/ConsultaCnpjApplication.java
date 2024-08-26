@@ -1,6 +1,4 @@
-package com.apirestful.consultaCNPJ;
-
-//import com.apirestfull.consultaCNPJ.response.CnpjResponse;
+package com.apirestful.consultacnpj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,8 +8,5 @@ public class ConsultaCnpjApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ConsultaCnpjApplication.class, args);
-			}
-
-
-
+	}
 }
